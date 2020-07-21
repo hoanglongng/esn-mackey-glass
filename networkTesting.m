@@ -28,7 +28,7 @@ for i = 1:initialRunlength
     internalState = tanh([intWM, inWM, ofbWM]*totalstate); 
     
     % Output update
-    netOut = f(outWM *[internalState;in]);
+    netOut = tanh(outWM *[internalState;in]);
     totalstate = [internalState;in;netOut];   
     
     % Forcing teacher output
